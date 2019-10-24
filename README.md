@@ -1,10 +1,15 @@
 # Creditas Data Engineering Challenge
 
-### Instructions
+## Instructions
 
-To reproduce the solutions you just have to run the docker container :)
+To reproduce the solution you just have to:
+    - Navigate to the project root directory.
+    - Run "docker build -t creditas_challenge ." to build a docker image for the project.
+    - Run "docker run creditas_challenge" to run the docker image.
 
-1. What was the most expensive campaign?
+## Answers
+
+### 1. What was the most expensive campaign?
 ```sql
 SELECT campaign_id, campaign_name, origin, sum(cost) AS total_campaign_cost  FROM 
 (
@@ -17,7 +22,7 @@ ORDER BY total_campaign_cost DESC
 LIMIT 1
 ```
 
-2. What was the most profitable campaign?
+### 2. What was the most profitable campaign?
 ```sql
 SELECT campaigns.campaign_id, campaigns.campaign_name, campaigns.origin, total_revenue, total_campaign_cost, total_revenue - total_campaign_cost AS total_profit
 FROM 
@@ -47,7 +52,7 @@ ORDER BY total_profit DESC
 LIMIT 1
 ```
 
-3. Which ad creative is the most effective in terms of clicks?
+### 3. Which ad creative is the most effective in terms of clicks?
 ```sql
 SELECT ad_creative_id, ad_creative_name, SUM(clicks) AS total_clicks
 FROM google_ads
@@ -56,7 +61,7 @@ ORDER BY total_clicks DESC
 LIMIT 1
 ```
 
-4. Which ad creative is the most effective in terms of generating leads?
+### 4. Which ad creative is the most effective in terms of generating leads?
 ```sql
 SELECT ad_creatives.ad_creative_id, ad_creatives.ad_creative_name,leads  FROM 
 (
@@ -79,16 +84,14 @@ WHERE ad_creatives.ad_creative_id = most_effective_ad_creative.ad_creative_id
 
 ## Extra questions
 
-This is not part of the challenge, but if you'd like to go further, please provide answers for the following questions in your README. There is no need to code, just explain how you would address the following:
+### - What would you suggest to process new incoming files several times a day?
+#### I would suggest, to process new incoming files several times a day, to use a nice ETL tool for data Extraction, Transformation and Loading, saving time by automating the process.
 
-#### - What would you suggest to process new incoming files several times a day?
-###### I would suggest, to process new incoming files several times a day, to use a nice ETL tool for data Extraction, Transformation and Loading, saving time by automating the process.
+### - What would you suggest to process new incoming data in near real time?
+#### To accomplish that I would suggest to use a stream-processing software like Kafka that is a really good tool for real-time data feeds.
 
-#### - What would you suggest to process new incoming data in near real time?
-###### To accomplish that I would suggest to use a stream-processing software like Kafka that is a really good tool for real-time data feeds.
+### - What would you suggest to process data that is much bigger?
+#### To process data that is much bigger I would recommend to use the pyspark library that is more appropriate to this scenario.
 
-#### - What would you suggest to process data that is much bigger?
-###### To process data that is much bigger I would recommend to use the pyspark library that is more appropriate to this scenario.
-
-#### - What would you suggest to process data much faster?
-## I would suggest a fast ETL tool like AWS Glue, and also a fast database like Elasticsearch
+### - What would you suggest to process data much faster?
+#### I would suggest a fast ETL tool like AWS Glue, and also a fast database like Elasticsearch
