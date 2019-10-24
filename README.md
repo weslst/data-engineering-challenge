@@ -3,9 +3,9 @@
 ## Instructions
 
 To reproduce the solution you just have to:
-    - Navigate to the project root directory.
-    - Run "docker build -t creditas_challenge ." to build a docker image for the project.
-    - Run "docker run creditas_challenge" to run the docker image.
+ - Navigate to the project root directory.
+ - Run "docker build -t creditas_challenge ." to build a docker image for the project.
+ - Run "docker run creditas_challenge" to run the docker image.
 
 ## Answers
 
