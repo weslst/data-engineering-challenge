@@ -82,13 +82,13 @@ WHERE ad_creatives.ad_creative_id = most_effective_ad_creative.ad_creative_id
 This is not part of the challenge, but if you'd like to go further, please provide answers for the following questions in your README. There is no need to code, just explain how you would address the following:
 
 #### - What would you suggest to process new incoming files several times a day?
-## To process new incoming files several times a day it is strongly recommended to use a nice ETL tool for data Extraction, Transformation and Loading
+###### I would suggest, to process new incoming files several times a day, to use a nice ETL tool for data Extraction, Transformation and Loading, saving time by automating the process.
 
 #### - What would you suggest to process new incoming data in near real time?
-## To accomplish that you can use a stream-processing software like Kafka that is a really good tool for real-time data feeds.
+###### To accomplish that I would suggest to use a stream-processing software like Kafka that is a really good tool for real-time data feeds.
 
 #### - What would you suggest to process data that is much bigger?
-## To process data that is much bigger I would recommend to use the pyspark library that is more appropriate to this scenario.
+###### To process data that is much bigger I would recommend to use the pyspark library that is more appropriate to this scenario.
 
 #### - What would you suggest to process data much faster?
 ## I would suggest a fast ETL tool like AWS Glue, and also a fast database like Elasticsearch
