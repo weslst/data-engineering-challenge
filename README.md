@@ -1,4 +1,4 @@
-# Creditas Data Engineering Challenge
+# Data Engineering Challenge
 
 ## Instructions
 
